@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 //connects the index file with our routes
 const apiRoutes = require('./apiRoutes/');
-const homeRoutes = require('./home-routes.js');
+const homeRoutes = require('./home-routes');
 const dashboardRoutes = require('./dashboard-routes');
 
 //allows router to use those routes at the set address

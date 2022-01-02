@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
             'title',
             'content',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         //include the JOIN to the User table
         include: [
@@ -90,7 +89,7 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         content: req.body.content,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -104,7 +103,8 @@ router.put('/:id', withAuth, (req, res) => {
     Post.update(
         //use the title value to replace the title fof a post
         {
-            title: req.body.title
+            title: req.body.title,
+            content: req.body.content
         },
         {
             where: {
