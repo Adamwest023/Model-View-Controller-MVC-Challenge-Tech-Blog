@@ -92,7 +92,7 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-//route for login template
+//route for login/ signup  template
 router.get('/login', (req, res) => {
     //if you are logged in go home 
     if (req.session.loggedIn) {

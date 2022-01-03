@@ -43,6 +43,10 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
+router.get('/add-post', withAuth, (req, res) => {
+    res.render('add-post', { loggedIn: true });
+});
+
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne(req.params.id, {
         attributes: [
