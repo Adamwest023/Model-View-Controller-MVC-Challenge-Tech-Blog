@@ -7,8 +7,8 @@ const dashboardRoutes = require('./dashboard-routes');
 
 //allows router to use those routes at the set address
 router.use('/api/', apiRoutes);
-router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes)
+router.use('/', homeRoutes);
 
 //for any route call that we dont have an endpoint for
 router.use((req, res) => {
