@@ -5,7 +5,9 @@ const withAuth = require('../utils/auth');
 
 //route to get to the dashboard
 router.get('/', withAuth, (req, res) => {
+    console.log("got here")
     //will render the dashboard handlebars if the loggedIn is a truthy
+
     Post.findAll({
         where: {
             // use the ID from the session
