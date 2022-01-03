@@ -1,18 +1,3 @@
-<section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
 
 {{#if posts.length}}
 <section>
@@ -26,6 +11,13 @@
     {{/each}}
   </ol>
 </section>
+{{else}}
+<section>
+    <h2>You don't have any posts yet!</h2>
+</section>
 {{/if}}
+<div>
+    <button> New Post</button>
+</div>
 
-<script src="/public/javascript/add-post.js"></script>
+<script src="/public/javascript/dashboard.js"></script>
